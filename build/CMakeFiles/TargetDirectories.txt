@@ -1,3 +1,0 @@
-E:/cpp_project/SETI/build/CMakeFiles/SETI.dir
-E:/cpp_project/SETI/build/CMakeFiles/edit_cache.dir
-E:/cpp_project/SETI/build/CMakeFiles/rebuild_cache.dir
