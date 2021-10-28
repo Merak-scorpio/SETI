@@ -92,7 +92,7 @@ int main() {
 
 
     // 2.5 记录演化结果
-    if (year % 100 == 0) {
+    if (year % 10 == 0) {
       str_year = to_string(year);
       ofs.open("./result/result_" + str_year + ".csv");
       ofs << "x,y" << endl;
