@@ -1,7 +1,12 @@
 #pragma once
 
 #include "constance.hpp"
+#ifdef WIN32
 #include <io.h>
+#elif linux
+#include <stdio.h>
+#include <unistd.h>
+#endif
 
 using namespace std;
 

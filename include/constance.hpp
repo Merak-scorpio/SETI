@@ -37,3 +37,5 @@ extern int    SNe_list_count; //超新星表容量大小
 extern string str_T_evo;
 extern string str_lambda_A;
 extern string str_P_ann;
+
+void constance_set();

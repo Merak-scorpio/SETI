@@ -14,6 +14,11 @@ uniform_real_distribution<double> u_SNe_num(0, SNe_list_count - 1);
 
 int main() {
 
+  constance_set();
+
+  cout << T_evo << endl;
+  cout << lambda_A << endl;
+  cout << P_ann << endl;
 
   double   start = omp_get_wtime();
   ofstream ofs;

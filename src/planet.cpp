@@ -58,6 +58,7 @@ void planet_nolife_process(location *location) {
   double      temp_random;
   vector<int> erase_list;
 
+
   for (int i = 0; i < int(location->Nolife_planets->size()); i++) {
     (*location->Nolife_planets)[i]->star_age++;
     if ((*location->Nolife_planets)[i]->star_age > (*location->Nolife_planets)[i]->star_T_L) {
@@ -68,7 +69,11 @@ void planet_nolife_process(location *location) {
     (*location->Nolife_planets)[i]->life_evo_time++;
     if ((*location->Nolife_planets)[i]->life_evo_time > (*location->Nolife_planets)[i]->planet_T_min) {
       temp_random = u_0_1(e);
+
       if (temp_random < P_Life) {
+        if (location->x == 90 && location->y == 5) {
+          cout << temp_random << endl;
+        }
         nointelligence_planet *temp_planet = new nointelligence_planet;
         temp_planet->star_age              = (*location->Nolife_planets)[i]->star_age - 1;
         temp_planet->x_coordinate          = (*location->Nolife_planets)[i]->x_coordinate;
@@ -108,7 +113,6 @@ void planet_nointelligence_process(location *location) {
       temp_planet->z_coordinate        = (*location->Nointelligence_planets)[i]->z_coordinate;
       temp_planet->star_T_L            = (*location->Nointelligence_planets)[i]->star_T_L;
       erase_list.emplace_back(i);
-
       location->Intelligence_planets->emplace_back(temp_planet);
     }
   }

@@ -9,6 +9,13 @@ void galaxy_formation(vector<location> *Location_List) {
 
 
 #ifdef WIN32
+  str_dirname = ".\\result";
+  dirname     = str_dirname.data();
+  if (_access(dirname, 0) != 0) {
+    str_order = "mkdir " + str_dirname;
+    order     = str_order.data();
+    system(order);
+  }
   str_dirname = ".\\result\\T_evo__" + str_T_evo;
   dirname     = str_dirname.data();
   if (_access(dirname, 0) != 0) {
@@ -26,7 +33,6 @@ void galaxy_formation(vector<location> *Location_List) {
   str_dirname = ".\\result\\T_evo__" + str_T_evo + "\\lambda_A__" + str_lambda_A + "\\P_ann__" + str_P_ann;
   dirname     = str_dirname.data();
   if (_access(dirname, 0) != 0) {
-    cout << dirname << " not exist" << endl;
     str_order = "mkdir " + str_dirname;
     order     = str_order.data();
     system(order);
@@ -38,34 +44,35 @@ void galaxy_formation(vector<location> *Location_List) {
   order     = str_order.data();
   system(order);
 #elif linux
-  str_dirname = "./result./T_evo__" + str_T_evo;
+  str_dirname = "./result";
   dirname     = str_dirname.data();
   if (access(dirname, 0) != 0) {
-    cout << dirname << " not exist" << endl;
     str_order = "mkdir " + str_dirname;
     order     = str_order.data();
-    cout << order << endl;
+    system(order);
+  }
+  str_dirname = "./result/T_evo__" + str_T_evo;
+  dirname     = str_dirname.data();
+  if (access(dirname, 0) != 0) {
+    str_order = "mkdir " + str_dirname;
+    order     = str_order.data();
     system(order);
   }
   str_dirname = "./result/T_evo__" + str_T_evo + "/lambda_A__" + str_lambda_A;
   dirname     = str_dirname.data();
   if (access(dirname, 0) != 0) {
-    cout << dirname << " not exist" << endl;
     str_order = "mkdir " + str_dirname;
-
-    order = str_order.data();
-    cout << order << endl;
+    order     = str_order.data();
     system(order);
   }
   str_dirname = "./result/T_evo__" + str_T_evo + "/lambda_A__" + str_lambda_A + "/P_ann__" + str_P_ann;
   dirname     = str_dirname.data();
   if (access(dirname, 0) != 0) {
-    cout << dirname << " not exist" << endl;
     str_order = "mkdir " + str_dirname;
     order     = str_order.data();
     system(order);
   }
-  str_order = "rd/s/q " + str_dirname;
+  str_order = "rm -rf " + str_dirname;
   order     = str_order.data();
   system(order);
   str_order = "mkdir ./result/T_evo__" + str_T_evo + "/lambda_A__" + str_lambda_A + "/P_ann__" + str_P_ann;
