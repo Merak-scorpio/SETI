@@ -5,6 +5,7 @@ void galaxy_formation(vector<location> *Location_List) {
 
 #ifdef WIN32
   system("rd/s/q .\\result");
+  system("mkdir result");
 #elif linux
   system("rm -rf result");
   system("mkdir result");
