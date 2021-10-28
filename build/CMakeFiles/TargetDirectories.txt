@@ -1,3 +1,3 @@
-/home/merak/202.112.85.90/new/build/CMakeFiles/edit_cache.dir
-/home/merak/202.112.85.90/new/build/CMakeFiles/rebuild_cache.dir
-/home/merak/202.112.85.90/new/build/CMakeFiles/SETI.dir
+E:/cpp_project/SETI/build/CMakeFiles/SETI.dir
+E:/cpp_project/SETI/build/CMakeFiles/edit_cache.dir
+E:/cpp_project/SETI/build/CMakeFiles/rebuild_cache.dir

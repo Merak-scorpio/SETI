@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/cmake-3.20.3/bin/cmake
+CMAKE_COMMAND = D:/c++/cmake/bin/cmake.exe
 
 # The command to remove a file.
-RM = /opt/cmake-3.20.3/bin/cmake -E rm -f
+RM = D:/c++/cmake/bin/cmake.exe -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/merak/202.112.85.90/new
+CMAKE_SOURCE_DIR = E:/cpp_project/SETI
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/merak/202.112.85.90/new/build
+CMAKE_BINARY_DIR = E:/cpp_project/SETI/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/SETI.dir/depend.make
@@ -69,99 +69,107 @@ include CMakeFiles/SETI.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/SETI.dir/flags.make
 
-CMakeFiles/SETI.dir/main.cpp.o: CMakeFiles/SETI.dir/flags.make
-CMakeFiles/SETI.dir/main.cpp.o: ../main.cpp
-CMakeFiles/SETI.dir/main.cpp.o: CMakeFiles/SETI.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/merak/202.112.85.90/new/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/SETI.dir/main.cpp.o"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SETI.dir/main.cpp.o -MF CMakeFiles/SETI.dir/main.cpp.o.d -o CMakeFiles/SETI.dir/main.cpp.o -c /home/merak/202.112.85.90/new/main.cpp
+CMakeFiles/SETI.dir/main.cpp.obj: CMakeFiles/SETI.dir/flags.make
+CMakeFiles/SETI.dir/main.cpp.obj: CMakeFiles/SETI.dir/includes_CXX.rsp
+CMakeFiles/SETI.dir/main.cpp.obj: ../main.cpp
+CMakeFiles/SETI.dir/main.cpp.obj: CMakeFiles/SETI.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:/cpp_project/SETI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/SETI.dir/main.cpp.obj"
+	D:/c++/MinGW/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SETI.dir/main.cpp.obj -MF CMakeFiles/SETI.dir/main.cpp.obj.d -o CMakeFiles/SETI.dir/main.cpp.obj -c E:/cpp_project/SETI/main.cpp
 
 CMakeFiles/SETI.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SETI.dir/main.cpp.i"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/merak/202.112.85.90/new/main.cpp > CMakeFiles/SETI.dir/main.cpp.i
+	D:/c++/MinGW/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:/cpp_project/SETI/main.cpp > CMakeFiles/SETI.dir/main.cpp.i
 
 CMakeFiles/SETI.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SETI.dir/main.cpp.s"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/merak/202.112.85.90/new/main.cpp -o CMakeFiles/SETI.dir/main.cpp.s
+	D:/c++/MinGW/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:/cpp_project/SETI/main.cpp -o CMakeFiles/SETI.dir/main.cpp.s
 
-CMakeFiles/SETI.dir/src/SNe.cpp.o: CMakeFiles/SETI.dir/flags.make
-CMakeFiles/SETI.dir/src/SNe.cpp.o: ../src/SNe.cpp
-CMakeFiles/SETI.dir/src/SNe.cpp.o: CMakeFiles/SETI.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/merak/202.112.85.90/new/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/SETI.dir/src/SNe.cpp.o"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SETI.dir/src/SNe.cpp.o -MF CMakeFiles/SETI.dir/src/SNe.cpp.o.d -o CMakeFiles/SETI.dir/src/SNe.cpp.o -c /home/merak/202.112.85.90/new/src/SNe.cpp
+CMakeFiles/SETI.dir/src/SNe.cpp.obj: CMakeFiles/SETI.dir/flags.make
+CMakeFiles/SETI.dir/src/SNe.cpp.obj: CMakeFiles/SETI.dir/includes_CXX.rsp
+CMakeFiles/SETI.dir/src/SNe.cpp.obj: ../src/SNe.cpp
+CMakeFiles/SETI.dir/src/SNe.cpp.obj: CMakeFiles/SETI.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:/cpp_project/SETI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/SETI.dir/src/SNe.cpp.obj"
+	D:/c++/MinGW/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SETI.dir/src/SNe.cpp.obj -MF CMakeFiles/SETI.dir/src/SNe.cpp.obj.d -o CMakeFiles/SETI.dir/src/SNe.cpp.obj -c E:/cpp_project/SETI/src/SNe.cpp
 
 CMakeFiles/SETI.dir/src/SNe.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SETI.dir/src/SNe.cpp.i"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/merak/202.112.85.90/new/src/SNe.cpp > CMakeFiles/SETI.dir/src/SNe.cpp.i
+	D:/c++/MinGW/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:/cpp_project/SETI/src/SNe.cpp > CMakeFiles/SETI.dir/src/SNe.cpp.i
 
 CMakeFiles/SETI.dir/src/SNe.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SETI.dir/src/SNe.cpp.s"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/merak/202.112.85.90/new/src/SNe.cpp -o CMakeFiles/SETI.dir/src/SNe.cpp.s
+	D:/c++/MinGW/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:/cpp_project/SETI/src/SNe.cpp -o CMakeFiles/SETI.dir/src/SNe.cpp.s
 
-CMakeFiles/SETI.dir/src/constance.cpp.o: CMakeFiles/SETI.dir/flags.make
-CMakeFiles/SETI.dir/src/constance.cpp.o: ../src/constance.cpp
-CMakeFiles/SETI.dir/src/constance.cpp.o: CMakeFiles/SETI.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/merak/202.112.85.90/new/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SETI.dir/src/constance.cpp.o"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SETI.dir/src/constance.cpp.o -MF CMakeFiles/SETI.dir/src/constance.cpp.o.d -o CMakeFiles/SETI.dir/src/constance.cpp.o -c /home/merak/202.112.85.90/new/src/constance.cpp
+CMakeFiles/SETI.dir/src/constance.cpp.obj: CMakeFiles/SETI.dir/flags.make
+CMakeFiles/SETI.dir/src/constance.cpp.obj: CMakeFiles/SETI.dir/includes_CXX.rsp
+CMakeFiles/SETI.dir/src/constance.cpp.obj: ../src/constance.cpp
+CMakeFiles/SETI.dir/src/constance.cpp.obj: CMakeFiles/SETI.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:/cpp_project/SETI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SETI.dir/src/constance.cpp.obj"
+	D:/c++/MinGW/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SETI.dir/src/constance.cpp.obj -MF CMakeFiles/SETI.dir/src/constance.cpp.obj.d -o CMakeFiles/SETI.dir/src/constance.cpp.obj -c E:/cpp_project/SETI/src/constance.cpp
 
 CMakeFiles/SETI.dir/src/constance.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SETI.dir/src/constance.cpp.i"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/merak/202.112.85.90/new/src/constance.cpp > CMakeFiles/SETI.dir/src/constance.cpp.i
+	D:/c++/MinGW/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:/cpp_project/SETI/src/constance.cpp > CMakeFiles/SETI.dir/src/constance.cpp.i
 
 CMakeFiles/SETI.dir/src/constance.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SETI.dir/src/constance.cpp.s"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/merak/202.112.85.90/new/src/constance.cpp -o CMakeFiles/SETI.dir/src/constance.cpp.s
+	D:/c++/MinGW/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:/cpp_project/SETI/src/constance.cpp -o CMakeFiles/SETI.dir/src/constance.cpp.s
 
-CMakeFiles/SETI.dir/src/galaxy.cpp.o: CMakeFiles/SETI.dir/flags.make
-CMakeFiles/SETI.dir/src/galaxy.cpp.o: ../src/galaxy.cpp
-CMakeFiles/SETI.dir/src/galaxy.cpp.o: CMakeFiles/SETI.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/merak/202.112.85.90/new/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SETI.dir/src/galaxy.cpp.o"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SETI.dir/src/galaxy.cpp.o -MF CMakeFiles/SETI.dir/src/galaxy.cpp.o.d -o CMakeFiles/SETI.dir/src/galaxy.cpp.o -c /home/merak/202.112.85.90/new/src/galaxy.cpp
+CMakeFiles/SETI.dir/src/galaxy.cpp.obj: CMakeFiles/SETI.dir/flags.make
+CMakeFiles/SETI.dir/src/galaxy.cpp.obj: CMakeFiles/SETI.dir/includes_CXX.rsp
+CMakeFiles/SETI.dir/src/galaxy.cpp.obj: ../src/galaxy.cpp
+CMakeFiles/SETI.dir/src/galaxy.cpp.obj: CMakeFiles/SETI.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:/cpp_project/SETI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SETI.dir/src/galaxy.cpp.obj"
+	D:/c++/MinGW/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SETI.dir/src/galaxy.cpp.obj -MF CMakeFiles/SETI.dir/src/galaxy.cpp.obj.d -o CMakeFiles/SETI.dir/src/galaxy.cpp.obj -c E:/cpp_project/SETI/src/galaxy.cpp
 
 CMakeFiles/SETI.dir/src/galaxy.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SETI.dir/src/galaxy.cpp.i"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/merak/202.112.85.90/new/src/galaxy.cpp > CMakeFiles/SETI.dir/src/galaxy.cpp.i
+	D:/c++/MinGW/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:/cpp_project/SETI/src/galaxy.cpp > CMakeFiles/SETI.dir/src/galaxy.cpp.i
 
 CMakeFiles/SETI.dir/src/galaxy.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SETI.dir/src/galaxy.cpp.s"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/merak/202.112.85.90/new/src/galaxy.cpp -o CMakeFiles/SETI.dir/src/galaxy.cpp.s
+	D:/c++/MinGW/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:/cpp_project/SETI/src/galaxy.cpp -o CMakeFiles/SETI.dir/src/galaxy.cpp.s
 
-CMakeFiles/SETI.dir/src/planet.cpp.o: CMakeFiles/SETI.dir/flags.make
-CMakeFiles/SETI.dir/src/planet.cpp.o: ../src/planet.cpp
-CMakeFiles/SETI.dir/src/planet.cpp.o: CMakeFiles/SETI.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/merak/202.112.85.90/new/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SETI.dir/src/planet.cpp.o"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SETI.dir/src/planet.cpp.o -MF CMakeFiles/SETI.dir/src/planet.cpp.o.d -o CMakeFiles/SETI.dir/src/planet.cpp.o -c /home/merak/202.112.85.90/new/src/planet.cpp
+CMakeFiles/SETI.dir/src/planet.cpp.obj: CMakeFiles/SETI.dir/flags.make
+CMakeFiles/SETI.dir/src/planet.cpp.obj: CMakeFiles/SETI.dir/includes_CXX.rsp
+CMakeFiles/SETI.dir/src/planet.cpp.obj: ../src/planet.cpp
+CMakeFiles/SETI.dir/src/planet.cpp.obj: CMakeFiles/SETI.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:/cpp_project/SETI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SETI.dir/src/planet.cpp.obj"
+	D:/c++/MinGW/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SETI.dir/src/planet.cpp.obj -MF CMakeFiles/SETI.dir/src/planet.cpp.obj.d -o CMakeFiles/SETI.dir/src/planet.cpp.obj -c E:/cpp_project/SETI/src/planet.cpp
 
 CMakeFiles/SETI.dir/src/planet.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SETI.dir/src/planet.cpp.i"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/merak/202.112.85.90/new/src/planet.cpp > CMakeFiles/SETI.dir/src/planet.cpp.i
+	D:/c++/MinGW/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:/cpp_project/SETI/src/planet.cpp > CMakeFiles/SETI.dir/src/planet.cpp.i
 
 CMakeFiles/SETI.dir/src/planet.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SETI.dir/src/planet.cpp.s"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/merak/202.112.85.90/new/src/planet.cpp -o CMakeFiles/SETI.dir/src/planet.cpp.s
+	D:/c++/MinGW/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:/cpp_project/SETI/src/planet.cpp -o CMakeFiles/SETI.dir/src/planet.cpp.s
 
 # Object files for target SETI
 SETI_OBJECTS = \
-"CMakeFiles/SETI.dir/main.cpp.o" \
-"CMakeFiles/SETI.dir/src/SNe.cpp.o" \
-"CMakeFiles/SETI.dir/src/constance.cpp.o" \
-"CMakeFiles/SETI.dir/src/galaxy.cpp.o" \
-"CMakeFiles/SETI.dir/src/planet.cpp.o"
+"CMakeFiles/SETI.dir/main.cpp.obj" \
+"CMakeFiles/SETI.dir/src/SNe.cpp.obj" \
+"CMakeFiles/SETI.dir/src/constance.cpp.obj" \
+"CMakeFiles/SETI.dir/src/galaxy.cpp.obj" \
+"CMakeFiles/SETI.dir/src/planet.cpp.obj"
 
 # External object files for target SETI
 SETI_EXTERNAL_OBJECTS =
 
-../bin/SETI: CMakeFiles/SETI.dir/main.cpp.o
-../bin/SETI: CMakeFiles/SETI.dir/src/SNe.cpp.o
-../bin/SETI: CMakeFiles/SETI.dir/src/constance.cpp.o
-../bin/SETI: CMakeFiles/SETI.dir/src/galaxy.cpp.o
-../bin/SETI: CMakeFiles/SETI.dir/src/planet.cpp.o
-../bin/SETI: CMakeFiles/SETI.dir/build.make
-../bin/SETI: CMakeFiles/SETI.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/merak/202.112.85.90/new/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable ../bin/SETI"
-	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SETI.dir/link.txt --verbose=$(VERBOSE)
+../bin/SETI.exe: CMakeFiles/SETI.dir/main.cpp.obj
+../bin/SETI.exe: CMakeFiles/SETI.dir/src/SNe.cpp.obj
+../bin/SETI.exe: CMakeFiles/SETI.dir/src/constance.cpp.obj
+../bin/SETI.exe: CMakeFiles/SETI.dir/src/galaxy.cpp.obj
+../bin/SETI.exe: CMakeFiles/SETI.dir/src/planet.cpp.obj
+../bin/SETI.exe: CMakeFiles/SETI.dir/build.make
+../bin/SETI.exe: CMakeFiles/SETI.dir/linklibs.rsp
+../bin/SETI.exe: CMakeFiles/SETI.dir/objects1.rsp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=E:/cpp_project/SETI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable ../bin/SETI.exe"
+	D:/c++/cmake/bin/cmake.exe -E rm -f CMakeFiles/SETI.dir/objects.a
+	D:/c++/MinGW/bin/ar.exe cr CMakeFiles/SETI.dir/objects.a @CMakeFiles/SETI.dir/objects1.rsp
+	D:/c++/MinGW/bin/g++.exe  -fopenmp -Wall -O3 -DNDEBUG -Wl,--whole-archive CMakeFiles/SETI.dir/objects.a -Wl,--no-whole-archive -o ../bin/SETI.exe -Wl,--out-implib,../bin/libSETI.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles/SETI.dir/linklibs.rsp
 
 # Rule to build all files generated by this target.
-CMakeFiles/SETI.dir/build: ../bin/SETI
+CMakeFiles/SETI.dir/build: ../bin/SETI.exe
 .PHONY : CMakeFiles/SETI.dir/build
 
 CMakeFiles/SETI.dir/clean:
@@ -169,6 +177,6 @@ CMakeFiles/SETI.dir/clean:
 .PHONY : CMakeFiles/SETI.dir/clean
 
 CMakeFiles/SETI.dir/depend:
-	cd /home/merak/202.112.85.90/new/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/merak/202.112.85.90/new /home/merak/202.112.85.90/new /home/merak/202.112.85.90/new/build /home/merak/202.112.85.90/new/build /home/merak/202.112.85.90/new/build/CMakeFiles/SETI.dir/DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" E:/cpp_project/SETI E:/cpp_project/SETI E:/cpp_project/SETI/build E:/cpp_project/SETI/build E:/cpp_project/SETI/build/CMakeFiles/SETI.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/SETI.dir/depend
 

@@ -1,27 +1,27 @@
 [
 {
-  "directory": "/home/merak/202.112.85.90/new/build",
-  "command": "/bin/c++  -I/home/merak/202.112.85.90/new/include  -fopenmp -Wall -O3 -DNDEBUG -std=gnu++2a -o CMakeFiles/SETI.dir/main.cpp.o -c /home/merak/202.112.85.90/new/main.cpp",
-  "file": "/home/merak/202.112.85.90/new/main.cpp"
+  "directory": "E:/cpp_project/SETI/build",
+  "command": "D:/c++/MinGW/bin/g++.exe  @CMakeFiles/SETI.dir/includes_CXX.rsp  -fopenmp -Wall -O3 -DNDEBUG -std=gnu++2a -o CMakeFiles/SETI.dir/main.cpp.obj -c E:/cpp_project/SETI/main.cpp",
+  "file": "E:/cpp_project/SETI/main.cpp"
 },
 {
-  "directory": "/home/merak/202.112.85.90/new/build",
-  "command": "/bin/c++  -I/home/merak/202.112.85.90/new/include  -fopenmp -Wall -O3 -DNDEBUG -std=gnu++2a -o CMakeFiles/SETI.dir/src/SNe.cpp.o -c /home/merak/202.112.85.90/new/src/SNe.cpp",
-  "file": "/home/merak/202.112.85.90/new/src/SNe.cpp"
+  "directory": "E:/cpp_project/SETI/build",
+  "command": "D:/c++/MinGW/bin/g++.exe  @CMakeFiles/SETI.dir/includes_CXX.rsp  -fopenmp -Wall -O3 -DNDEBUG -std=gnu++2a -o CMakeFiles/SETI.dir/src/SNe.cpp.obj -c E:/cpp_project/SETI/src/SNe.cpp",
+  "file": "E:/cpp_project/SETI/src/SNe.cpp"
 },
 {
-  "directory": "/home/merak/202.112.85.90/new/build",
-  "command": "/bin/c++  -I/home/merak/202.112.85.90/new/include  -fopenmp -Wall -O3 -DNDEBUG -std=gnu++2a -o CMakeFiles/SETI.dir/src/constance.cpp.o -c /home/merak/202.112.85.90/new/src/constance.cpp",
-  "file": "/home/merak/202.112.85.90/new/src/constance.cpp"
+  "directory": "E:/cpp_project/SETI/build",
+  "command": "D:/c++/MinGW/bin/g++.exe  @CMakeFiles/SETI.dir/includes_CXX.rsp  -fopenmp -Wall -O3 -DNDEBUG -std=gnu++2a -o CMakeFiles/SETI.dir/src/constance.cpp.obj -c E:/cpp_project/SETI/src/constance.cpp",
+  "file": "E:/cpp_project/SETI/src/constance.cpp"
 },
 {
-  "directory": "/home/merak/202.112.85.90/new/build",
-  "command": "/bin/c++  -I/home/merak/202.112.85.90/new/include  -fopenmp -Wall -O3 -DNDEBUG -std=gnu++2a -o CMakeFiles/SETI.dir/src/galaxy.cpp.o -c /home/merak/202.112.85.90/new/src/galaxy.cpp",
-  "file": "/home/merak/202.112.85.90/new/src/galaxy.cpp"
+  "directory": "E:/cpp_project/SETI/build",
+  "command": "D:/c++/MinGW/bin/g++.exe  @CMakeFiles/SETI.dir/includes_CXX.rsp  -fopenmp -Wall -O3 -DNDEBUG -std=gnu++2a -o CMakeFiles/SETI.dir/src/galaxy.cpp.obj -c E:/cpp_project/SETI/src/galaxy.cpp",
+  "file": "E:/cpp_project/SETI/src/galaxy.cpp"
 },
 {
-  "directory": "/home/merak/202.112.85.90/new/build",
-  "command": "/bin/c++  -I/home/merak/202.112.85.90/new/include  -fopenmp -Wall -O3 -DNDEBUG -std=gnu++2a -o CMakeFiles/SETI.dir/src/planet.cpp.o -c /home/merak/202.112.85.90/new/src/planet.cpp",
-  "file": "/home/merak/202.112.85.90/new/src/planet.cpp"
+  "directory": "E:/cpp_project/SETI/build",
+  "command": "D:/c++/MinGW/bin/g++.exe  @CMakeFiles/SETI.dir/includes_CXX.rsp  -fopenmp -Wall -O3 -DNDEBUG -std=gnu++2a -o CMakeFiles/SETI.dir/src/planet.cpp.obj -c E:/cpp_project/SETI/src/planet.cpp",
+  "file": "E:/cpp_project/SETI/src/planet.cpp"
 }
 ]

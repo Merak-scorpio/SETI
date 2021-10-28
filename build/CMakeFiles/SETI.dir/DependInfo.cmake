@@ -8,11 +8,11 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/merak/202.112.85.90/new/main.cpp" "CMakeFiles/SETI.dir/main.cpp.o" "gcc" "CMakeFiles/SETI.dir/main.cpp.o.d"
-  "/home/merak/202.112.85.90/new/src/SNe.cpp" "CMakeFiles/SETI.dir/src/SNe.cpp.o" "gcc" "CMakeFiles/SETI.dir/src/SNe.cpp.o.d"
-  "/home/merak/202.112.85.90/new/src/constance.cpp" "CMakeFiles/SETI.dir/src/constance.cpp.o" "gcc" "CMakeFiles/SETI.dir/src/constance.cpp.o.d"
-  "/home/merak/202.112.85.90/new/src/galaxy.cpp" "CMakeFiles/SETI.dir/src/galaxy.cpp.o" "gcc" "CMakeFiles/SETI.dir/src/galaxy.cpp.o.d"
-  "/home/merak/202.112.85.90/new/src/planet.cpp" "CMakeFiles/SETI.dir/src/planet.cpp.o" "gcc" "CMakeFiles/SETI.dir/src/planet.cpp.o.d"
+  "E:/cpp_project/SETI/main.cpp" "CMakeFiles/SETI.dir/main.cpp.obj" "gcc" "CMakeFiles/SETI.dir/main.cpp.obj.d"
+  "E:/cpp_project/SETI/src/SNe.cpp" "CMakeFiles/SETI.dir/src/SNe.cpp.obj" "gcc" "CMakeFiles/SETI.dir/src/SNe.cpp.obj.d"
+  "E:/cpp_project/SETI/src/constance.cpp" "CMakeFiles/SETI.dir/src/constance.cpp.obj" "gcc" "CMakeFiles/SETI.dir/src/constance.cpp.obj.d"
+  "E:/cpp_project/SETI/src/galaxy.cpp" "CMakeFiles/SETI.dir/src/galaxy.cpp.obj" "gcc" "CMakeFiles/SETI.dir/src/galaxy.cpp.obj.d"
+  "E:/cpp_project/SETI/src/planet.cpp" "CMakeFiles/SETI.dir/src/planet.cpp.obj" "gcc" "CMakeFiles/SETI.dir/src/planet.cpp.obj.d"
   )
 
 # Targets to which this target links.

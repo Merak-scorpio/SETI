@@ -5,6 +5,7 @@
 #include <iostream>
 #include <random>
 #include <string>
+#include <sys/time.h>
 #include <vector>
 
 using namespace std;

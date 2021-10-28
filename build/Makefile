@@ -48,19 +48,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/cmake-3.20.3/bin/cmake
+CMAKE_COMMAND = D:/c++/cmake/bin/cmake.exe
 
 # The command to remove a file.
-RM = /opt/cmake-3.20.3/bin/cmake -E rm -f
+RM = D:/c++/cmake/bin/cmake.exe -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/merak/202.112.85.90/new
+CMAKE_SOURCE_DIR = E:/cpp_project/SETI
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/merak/202.112.85.90/new/build
+CMAKE_BINARY_DIR = E:/cpp_project/SETI/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /home/merak/202.112.85.90/new/build
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/opt/cmake-3.20.3/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	D:/c++/cmake/bin/cmake-gui.exe -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -78,7 +78,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/opt/cmake-3.20.3/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	D:/c++/cmake/bin/cmake.exe --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/merak/202.112.85.90/new/build/CMakeFiles /home/merak/202.112.85.90/new/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start E:/cpp_project/SETI/build/CMakeFiles E:/cpp_project/SETI/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/merak/202.112.85.90/new/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start E:/cpp_project/SETI/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -129,13 +129,13 @@ SETI/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SETI.dir/build.make CMakeFiles/SETI.dir/build
 .PHONY : SETI/fast
 
-main.o: main.cpp.o
-.PHONY : main.o
+main.obj: main.cpp.obj
+.PHONY : main.obj
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SETI.dir/build.make CMakeFiles/SETI.dir/main.cpp.o
-.PHONY : main.cpp.o
+main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SETI.dir/build.make CMakeFiles/SETI.dir/main.cpp.obj
+.PHONY : main.cpp.obj
 
 main.i: main.cpp.i
 .PHONY : main.i
@@ -153,13 +153,13 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SETI.dir/build.make CMakeFiles/SETI.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-src/SNe.o: src/SNe.cpp.o
-.PHONY : src/SNe.o
+src/SNe.obj: src/SNe.cpp.obj
+.PHONY : src/SNe.obj
 
 # target to build an object file
-src/SNe.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SETI.dir/build.make CMakeFiles/SETI.dir/src/SNe.cpp.o
-.PHONY : src/SNe.cpp.o
+src/SNe.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SETI.dir/build.make CMakeFiles/SETI.dir/src/SNe.cpp.obj
+.PHONY : src/SNe.cpp.obj
 
 src/SNe.i: src/SNe.cpp.i
 .PHONY : src/SNe.i
@@ -177,13 +177,13 @@ src/SNe.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SETI.dir/build.make CMakeFiles/SETI.dir/src/SNe.cpp.s
 .PHONY : src/SNe.cpp.s
 
-src/constance.o: src/constance.cpp.o
-.PHONY : src/constance.o
+src/constance.obj: src/constance.cpp.obj
+.PHONY : src/constance.obj
 
 # target to build an object file
-src/constance.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SETI.dir/build.make CMakeFiles/SETI.dir/src/constance.cpp.o
-.PHONY : src/constance.cpp.o
+src/constance.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SETI.dir/build.make CMakeFiles/SETI.dir/src/constance.cpp.obj
+.PHONY : src/constance.cpp.obj
 
 src/constance.i: src/constance.cpp.i
 .PHONY : src/constance.i
@@ -201,13 +201,13 @@ src/constance.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SETI.dir/build.make CMakeFiles/SETI.dir/src/constance.cpp.s
 .PHONY : src/constance.cpp.s
 
-src/galaxy.o: src/galaxy.cpp.o
-.PHONY : src/galaxy.o
+src/galaxy.obj: src/galaxy.cpp.obj
+.PHONY : src/galaxy.obj
 
 # target to build an object file
-src/galaxy.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SETI.dir/build.make CMakeFiles/SETI.dir/src/galaxy.cpp.o
-.PHONY : src/galaxy.cpp.o
+src/galaxy.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SETI.dir/build.make CMakeFiles/SETI.dir/src/galaxy.cpp.obj
+.PHONY : src/galaxy.cpp.obj
 
 src/galaxy.i: src/galaxy.cpp.i
 .PHONY : src/galaxy.i
@@ -225,13 +225,13 @@ src/galaxy.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SETI.dir/build.make CMakeFiles/SETI.dir/src/galaxy.cpp.s
 .PHONY : src/galaxy.cpp.s
 
-src/planet.o: src/planet.cpp.o
-.PHONY : src/planet.o
+src/planet.obj: src/planet.cpp.obj
+.PHONY : src/planet.obj
 
 # target to build an object file
-src/planet.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SETI.dir/build.make CMakeFiles/SETI.dir/src/planet.cpp.o
-.PHONY : src/planet.cpp.o
+src/planet.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SETI.dir/build.make CMakeFiles/SETI.dir/src/planet.cpp.obj
+.PHONY : src/planet.cpp.obj
 
 src/planet.i: src/planet.cpp.i
 .PHONY : src/planet.i
@@ -258,19 +258,19 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... SETI"
-	@echo "... main.o"
+	@echo "... main.obj"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... src/SNe.o"
+	@echo "... src/SNe.obj"
 	@echo "... src/SNe.i"
 	@echo "... src/SNe.s"
-	@echo "... src/constance.o"
+	@echo "... src/constance.obj"
 	@echo "... src/constance.i"
 	@echo "... src/constance.s"
-	@echo "... src/galaxy.o"
+	@echo "... src/galaxy.obj"
 	@echo "... src/galaxy.i"
 	@echo "... src/galaxy.s"
-	@echo "... src/planet.o"
+	@echo "... src/planet.obj"
 	@echo "... src/planet.i"
 	@echo "... src/planet.s"
 .PHONY : help
