@@ -53,7 +53,7 @@ int main() {
 
   // 2   演化开始(每一步时长 1Myr)
   for (int year = 1; year <= evo_time; year++) {
-    cout << "No. " << year << " million year start" << endl;
+    cout << "No. " << year << " million years start" << endl;
 
 
     // 2.1 产生新的恒星和行星
