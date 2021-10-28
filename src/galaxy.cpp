@@ -3,14 +3,22 @@
 
 void galaxy_formation(vector<location> *Location_List) {
 
-#ifdef WIN32
-  system("rd/s/q .\\result");
-  system("mkdir result");
-#elif linux
-  system("rm -rf result");
-  system("mkdir result");
-#endif
+  string      str_order;
+  const char *order;
 
+
+#ifdef WIN32
+  str_order = "rd/s/q ./result/T_evo=" + str_T_evo + "/lambda_A=" + str_lambda_A + "/P_ann=" + str_P_ann;
+  order     = str_order.data();
+  system(order);
+#elif linux
+  str_order = "rm -rf ./result/T_evo=" + str_T_evo + "/lambda_A=" + str_lambda_A + "/P_ann=" + str_P_ann;
+  order     = str_order.data();
+  system(order);
+#endif
+  str_order = "mkdir ./result/T_evo=" + str_T_evo + "/lambda_A=" + str_lambda_A + "/P_ann=" + str_P_ann;
+  order     = str_order.data();
+  system(order);
   cout << "Initialization completed" << endl;
 
   int    r2, n, x, y, size;
