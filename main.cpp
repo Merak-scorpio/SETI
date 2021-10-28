@@ -114,9 +114,5 @@ int main() {
   double finish = omp_get_wtime();
   cout << "Total cost" << finish - start << " s" << endl;
 
-
-  cout << "T_evo= " << T_evo << endl;
-  cout << "lambda_A= " << lambda_A << endl;
-  cout << "P_ann= " << P_ann << endl;
   return 0;
 }
