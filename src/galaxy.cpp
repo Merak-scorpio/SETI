@@ -11,7 +11,7 @@ void galaxy_formation(vector<location> *Location_List) {
   system("mkdir result");
 #endif
 
-  cout << "清理完了" << endl;
+  cout << "Initialization completed" << endl;
 
   int    r2, n, x, y, size;
   double r, sigma_Gas, sigma_SFR, Gas_Mass;
