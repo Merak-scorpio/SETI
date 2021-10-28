@@ -92,14 +92,15 @@ int main() {
 
 
     // 2.5 记录演化结果
-    if (year % 10 == 0) {
+    if (year % 1 == 0) {
       str_year = to_string(year);
       ofs.open("./result/result_" + str_year + ".csv");
-      ofs << "x,y" << endl;
+      ofs << "x,y,age" << endl;
       for (int i = 0; i < int(Galaxy.size()); i++) {
         if (!Galaxy[i].Intelligence_planets->empty()) {
           for (int j = 0; j < int(Galaxy[i].Intelligence_planets->size()); j++) {
-            ofs << (*Galaxy[i].Intelligence_planets)[j]->x_coordinate << ',' << (*Galaxy[i].Intelligence_planets)[j]->y_coordinate << endl;
+            ofs << (*Galaxy[i].Intelligence_planets)[j]->x_coordinate << ',' << (*Galaxy[i].Intelligence_planets)[j]->y_coordinate << ','
+                << (*Galaxy[i].Intelligence_planets)[j]->intelligence_age << endl;
           }
         }
       }
