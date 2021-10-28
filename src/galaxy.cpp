@@ -3,8 +3,13 @@
 
 void galaxy_formation(vector<location> *Location_List) {
 
+#ifdef WIN32
+  system("rd/s/q .\\result");
+#elif linux
   system("rm -rf result");
   system("mkdir result");
+#endif
+
   cout << "清理完了" << endl;
 
   int    r2, n, x, y, size;

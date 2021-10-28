@@ -5,8 +5,12 @@
 #include <iostream>
 #include <random>
 #include <string>
-#include <sys/time.h>
 #include <vector>
+
+#ifdef WIN32
+#include <sys/time.h>
+#endif
+
 
 using namespace std;
 
