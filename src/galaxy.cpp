@@ -2,23 +2,77 @@
 
 
 void galaxy_formation(vector<location> *Location_List) {
-
+  string      str_dirname;
   string      str_order;
+  const char *dirname;
   const char *order;
 
 
 #ifdef WIN32
-  str_order = "rd/s/q ./result/T_evo=" + str_T_evo + "/lambda_A=" + str_lambda_A + "/P_ann=" + str_P_ann;
+  str_dirname = ".\\result\\T_evo__" + str_T_evo;
+  dirname     = str_dirname.data();
+  if (_access(dirname, 0) != 0) {
+    str_order = "mkdir " + str_dirname;
+    order     = str_order.data();
+    system(order);
+  }
+  str_dirname = ".\\result\\T_evo__" + str_T_evo + "\\lambda_A__" + str_lambda_A;
+  dirname     = str_dirname.data();
+  if (_access(dirname, 0) != 0) {
+    str_order = "mkdir " + str_dirname;
+    order     = str_order.data();
+    system(order);
+  }
+  str_dirname = ".\\result\\T_evo__" + str_T_evo + "\\lambda_A__" + str_lambda_A + "\\P_ann__" + str_P_ann;
+  dirname     = str_dirname.data();
+  if (_access(dirname, 0) != 0) {
+    cout << dirname << " not exist" << endl;
+    str_order = "mkdir " + str_dirname;
+    order     = str_order.data();
+    system(order);
+  }
+  str_order = "rd/s/q " + str_dirname;
+  order     = str_order.data();
+  system(order);
+  str_order = "mkdir .\\result\\T_evo__" + str_T_evo + "\\lambda_A__" + str_lambda_A + "\\P_ann__" + str_P_ann;
   order     = str_order.data();
   system(order);
 #elif linux
-  str_order = "rm -rf ./result/T_evo=" + str_T_evo + "/lambda_A=" + str_lambda_A + "/P_ann=" + str_P_ann;
+  str_dirname = "./result./T_evo__" + str_T_evo;
+  dirname     = str_dirname.data();
+  if (access(dirname, 0) != 0) {
+    cout << dirname << " not exist" << endl;
+    str_order = "mkdir " + str_dirname;
+    order     = str_order.data();
+    cout << order << endl;
+    system(order);
+  }
+  str_dirname = "./result/T_evo__" + str_T_evo + "/lambda_A__" + str_lambda_A;
+  dirname     = str_dirname.data();
+  if (access(dirname, 0) != 0) {
+    cout << dirname << " not exist" << endl;
+    str_order = "mkdir " + str_dirname;
+
+    order = str_order.data();
+    cout << order << endl;
+    system(order);
+  }
+  str_dirname = "./result/T_evo__" + str_T_evo + "/lambda_A__" + str_lambda_A + "/P_ann__" + str_P_ann;
+  dirname     = str_dirname.data();
+  if (access(dirname, 0) != 0) {
+    cout << dirname << " not exist" << endl;
+    str_order = "mkdir " + str_dirname;
+    order     = str_order.data();
+    system(order);
+  }
+  str_order = "rd/s/q " + str_dirname;
+  order     = str_order.data();
+  system(order);
+  str_order = "mkdir ./result/T_evo__" + str_T_evo + "/lambda_A__" + str_lambda_A + "/P_ann__" + str_P_ann;
   order     = str_order.data();
   system(order);
 #endif
-  str_order = "mkdir ./result/T_evo=" + str_T_evo + "/lambda_A=" + str_lambda_A + "/P_ann=" + str_P_ann;
-  order     = str_order.data();
-  system(order);
+
   cout << "Initialization completed" << endl;
 
   int    r2, n, x, y, size;

@@ -14,3 +14,12 @@ double d_SNII         = 0.08;                 //超新星平均灭绝半径
 double M_SNII         = -16.89;               //超新星评价绝对星等
 int    SNe_total      = int(0.025 * 1000000); //超新星总数
 int    SNe_list_count = 50;                   //超新星表容量大小
+
+double lambda_A = 0.001;  //概率参数
+int    T_evo    = 10;     //生命进化所需时间
+double P_ann    = 0.0001; //每步自毁概率
+int    evo_time = 50;     //演化时长
+
+string str_T_evo    = to_string(T_evo);
+string str_lambda_A = to_string(lambda_A);
+string str_P_ann    = to_string(P_ann);

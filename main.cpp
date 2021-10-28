@@ -13,28 +13,7 @@ default_random_engine             e_main(time(0));
 uniform_real_distribution<double> u_SNe_num(0, SNe_list_count - 1);
 
 int main() {
-  cout << "T_evo=";
-  cin >> T_evo;
-  str_T_evo = to_string(T_evo);
-  cout << endl;
 
-  cout << "lambda_A=";
-  cin >> lambda_A;
-  str_lambda_A = to_string(lambda_A);
-  cout << endl;
-
-  cout << "P_ann=";
-  cin >> P_ann;
-  str_P_ann = to_string(P_ann);
-  cout << endl;
-
-  cout << "evo_time=";
-  cin >> evo_time;
-  cout << endl;
-
-  cout << "T_evo= " << T_evo << endl;
-  cout << "lambda_A= " << lambda_A << endl;
-  cout << "P_ann= " << P_ann << endl;
 
   double   start = omp_get_wtime();
   ofstream ofs;
@@ -117,7 +96,7 @@ int main() {
     // 2.5 记录演化结果
     if (year % 1 == 0) {
       str_year = to_string(year);
-      ofs.open("./result/result_" + str_year + ".csv");
+      ofs.open("./result/T_evo__" + str_T_evo + "/lambda_A__" + str_lambda_A + "/P_ann__" + str_P_ann + "/result_" + str_year + ".csv");
       ofs << "x,y,age" << endl;
       for (int i = 0; i < int(Galaxy.size()); i++) {
         if (!Galaxy[i].Intelligence_planets->empty()) {
@@ -134,5 +113,10 @@ int main() {
 
   double finish = omp_get_wtime();
   cout << "Total cost" << finish - start << " s" << endl;
+
+
+  cout << "T_evo= " << T_evo << endl;
+  cout << "lambda_A= " << lambda_A << endl;
+  cout << "P_ann= " << P_ann << endl;
   return 0;
 }
