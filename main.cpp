@@ -16,9 +16,9 @@ int main() {
 
   constance_set();
 
-  cout << T_evo << endl;
-  cout << lambda_A << endl;
-  cout << P_ann << endl;
+  cout << "T_evo= " << T_evo << endl;
+  cout << "lambda_A= " << lambda_A << endl;
+  cout << "P_ann= " << P_ann << endl;
 
   double   start = omp_get_wtime();
   ofstream ofs;
