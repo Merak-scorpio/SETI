@@ -1,0 +1,27 @@
+[
+{
+  "directory": "/home/merak/202.112.85.90/new/build",
+  "command": "/bin/c++  -I/home/merak/202.112.85.90/new/include  -fopenmp -Wall -O3 -DNDEBUG -std=gnu++2a -o CMakeFiles/SETI.dir/main.cpp.o -c /home/merak/202.112.85.90/new/main.cpp",
+  "file": "/home/merak/202.112.85.90/new/main.cpp"
+},
+{
+  "directory": "/home/merak/202.112.85.90/new/build",
+  "command": "/bin/c++  -I/home/merak/202.112.85.90/new/include  -fopenmp -Wall -O3 -DNDEBUG -std=gnu++2a -o CMakeFiles/SETI.dir/src/SNe.cpp.o -c /home/merak/202.112.85.90/new/src/SNe.cpp",
+  "file": "/home/merak/202.112.85.90/new/src/SNe.cpp"
+},
+{
+  "directory": "/home/merak/202.112.85.90/new/build",
+  "command": "/bin/c++  -I/home/merak/202.112.85.90/new/include  -fopenmp -Wall -O3 -DNDEBUG -std=gnu++2a -o CMakeFiles/SETI.dir/src/constance.cpp.o -c /home/merak/202.112.85.90/new/src/constance.cpp",
+  "file": "/home/merak/202.112.85.90/new/src/constance.cpp"
+},
+{
+  "directory": "/home/merak/202.112.85.90/new/build",
+  "command": "/bin/c++  -I/home/merak/202.112.85.90/new/include  -fopenmp -Wall -O3 -DNDEBUG -std=gnu++2a -o CMakeFiles/SETI.dir/src/galaxy.cpp.o -c /home/merak/202.112.85.90/new/src/galaxy.cpp",
+  "file": "/home/merak/202.112.85.90/new/src/galaxy.cpp"
+},
+{
+  "directory": "/home/merak/202.112.85.90/new/build",
+  "command": "/bin/c++  -I/home/merak/202.112.85.90/new/include  -fopenmp -Wall -O3 -DNDEBUG -std=gnu++2a -o CMakeFiles/SETI.dir/src/planet.cpp.o -c /home/merak/202.112.85.90/new/src/planet.cpp",
+  "file": "/home/merak/202.112.85.90/new/src/planet.cpp"
+}
+]

@@ -1,0 +1,1 @@
+/bin/c++  -fopenmp -Wall -O3 -DNDEBUG CMakeFiles/SETI.dir/main.cpp.o CMakeFiles/SETI.dir/src/SNe.cpp.o CMakeFiles/SETI.dir/src/constance.cpp.o CMakeFiles/SETI.dir/src/galaxy.cpp.o CMakeFiles/SETI.dir/src/planet.cpp.o -o ../bin/SETI   -L/home/merak/202.112.85.90/new/lib 
