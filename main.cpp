@@ -19,6 +19,7 @@ int main() {
   cout << "T_evo= " << T_evo << endl;
   cout << "lambda_A= " << lambda_A << endl;
   cout << "P_ann= " << P_ann << endl;
+  cout << "SNe_list_count= " << SNe_list_count << endl;
 
   double   start = omp_get_wtime();
   ofstream ofs;
