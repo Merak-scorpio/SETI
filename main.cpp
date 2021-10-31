@@ -3,7 +3,6 @@
 #include "galaxy.hpp"
 #include "planet.hpp"
 
-#include <fstream>
 #include <omp.h>
 
 using namespace std;
