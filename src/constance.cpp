@@ -23,16 +23,42 @@ double P_Life;   //生命从无到有的泊松概率
 string str_T_evo;
 string str_lambda_A;
 string str_P_ann;
+string str_SNe_list_count;
+string str_evo_time;
 
 void constance_set() {
-  cout << "T_evo= ";
-  cin >> T_evo;
-  cout << "lambda_A= ";
-  cin >> lambda_A;
-  cout << "P_ann= ";
-  cin >> P_ann;
-  cout << "evo_time= ";
-  cin >> evo_time;
+  // cout << "T_evo= ";
+  // cin >> T_evo;
+  // cout << "lambda_A= ";
+  // cin >> lambda_A;
+  // cout << "P_ann= ";
+  // cin >> P_ann;
+  // cout << "evo_time= ";
+  // cin >> evo_time;
+
+  ifstream fin("constance.csv");
+  string   line;
+  getline(fin, line);
+  getline(fin, line);
+  istringstream  sin(line);
+  vector<string> fields;
+  string         field;
+  while (getline(sin, field, ',')) {
+    fields.push_back(field);
+  }
+
+  str_T_evo          = fields[0];
+  str_lambda_A       = fields[1];
+  str_P_ann          = fields[2];
+  str_SNe_list_count = fields[3];
+  str_evo_time       = fields[4];
+
+  T_evo          = stoi(str_T_evo);
+  lambda_A       = stod(str_lambda_A);
+  P_ann          = stod(str_P_ann);
+  SNe_list_count = stoi(str_SNe_list_count);
+  evo_time       = stoi(str_evo_time);
+
   P_Life       = 1 - exp(-lambda_A);
   str_T_evo    = to_string(T_evo);
   str_lambda_A = to_string(lambda_A);
