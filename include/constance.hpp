@@ -10,11 +10,6 @@
 #include <string>
 #include <vector>
 
-// #ifdef WIN32
-// #include <sys/time.h>
-// #endif
-
-
 using namespace std;
 
 extern double cell_r;    //每个细分空间边长
