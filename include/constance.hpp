@@ -2,17 +2,13 @@
 
 #define _USE_MATH_DEFINES
 #include <cmath>
+#include <ctime>
 #include <fstream>
 #include <iostream>
 #include <random>
 #include <sstream>
 #include <string>
 #include <vector>
-
-#ifdef WIN32
-#include <sys/time.h>
-#endif
-
 
 using namespace std;
 
