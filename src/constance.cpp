@@ -64,4 +64,5 @@ void constance_set() {
   P_ann          = stod(str_P_ann);
   SNe_list_count = stoi(str_SNe_list_count);
   evo_time       = stoi(str_evo_time);
+  P_Life         = 1 - exp(-lambda_A);
 }
