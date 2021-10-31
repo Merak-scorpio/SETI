@@ -62,17 +62,17 @@ int main() {
   for (int year = 1; year <= evo_time; year++) {
     cout << "No. " << year << " million years start" << endl;
 
-
-    // 2.1 产生新的恒星和行星
-    cout << "Producing planets" << endl;
-    double t_planet_start = omp_get_wtime();
+    if (year <= evo_time / 4) {
+      // 2.1 产生新的恒星和行星
+      cout << "Producing planets" << endl;
+      double t_planet_start = omp_get_wtime();
 #pragma omp parallel for
-    for (int i = 0; i < int(Galaxy.size()); i++) {
-      planet_loop(&Galaxy[i]);
+      for (int i = 0; i < int(Galaxy.size()); i++) {
+        planet_loop(&Galaxy[i]);
+      }
+      double t_planet_finish = omp_get_wtime();
+      cout << "Producted, cost " << t_planet_finish - t_planet_start << " s" << endl;
     }
-    double t_planet_finish = omp_get_wtime();
-    cout << "Producted, cost " << t_planet_finish - t_planet_start << " s" << endl;
-
 
     // 2.2 生命进程判定
     double t_process_start = omp_get_wtime();
