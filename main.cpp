@@ -62,7 +62,7 @@ int main() {
   for (int year = 1; year <= evo_time; year++) {
     cout << "No. " << year << " million years start" << endl;
 
-    if (year <= 10000) {
+    if (year <= star_end_year) {
       // 2.1 产生新的恒星和行星
       cout << "Producing planets" << endl;
       double t_planet_start = omp_get_wtime();
