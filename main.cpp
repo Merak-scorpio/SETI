@@ -99,7 +99,7 @@ int main() {
 
 
     // 2.5 记录演化结果
-    if (year % 1 == 0) {
+    if (year % 100 == 0) {
       str_year = to_string(year);
       ofs.open("./result/T_evo__" + str_T_evo + "/lambda_A__" + str_lambda_A + "/P_ann__" + str_P_ann + "/result_" + str_year + ".csv");
       ofs << "x,y,age" << endl;
