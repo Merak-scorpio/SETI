@@ -71,9 +71,6 @@ void planet_nolife_process(location *location) {
       temp_random = u_0_1(e);
 
       if (temp_random < P_Life) {
-        if (location->x == 90 && location->y == 5) {
-          cout << temp_random << endl;
-        }
         nointelligence_planet *temp_planet = new nointelligence_planet;
         temp_planet->star_age              = (*location->Nolife_planets)[i]->star_age - 1;
         temp_planet->x_coordinate          = (*location->Nolife_planets)[i]->x_coordinate;
