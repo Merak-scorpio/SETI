@@ -19,6 +19,7 @@ int main() {
   cout << "T_evo= " << T_evo << endl;
   cout << "lambda_A= " << lambda_A << endl;
   cout << "P_ann= " << P_ann << endl;
+  cout << "star_end_year= " << star_end_year << endl;
 
   double   start = omp_get_wtime();
   ofstream ofs;
@@ -28,34 +29,43 @@ int main() {
   cout << "initialize galaxy" << endl;
   vector<location> Galaxy;
   galaxy_formation(&Galaxy);
+  vector<SNe *> SNe_list;
+  for (int i = 0; i < SNe_total; i++) {
+    SNe *temp          = new SNe;
+    temp->x_coordinate = 0;
+    temp->y_coordinate = 0;
+    temp->z_coordinate = 0;
+    temp->D_SNe        = 0;
+    SNe_list.emplace_back(temp);
+  }
   double t_galaxy_formation = omp_get_wtime();
   cout << "initialization cost " << t_galaxy_formation - start << " s" << endl;
 
 
-  cout << "Generate supernova initial data" << endl;
-  vector<vector<SNe *> *> total_SNe_list;
-  vector<int>             SNe_num(evo_time);
-  for (int year = 1; year <= evo_time; year++) {
-    SNe_num[year - 1] = u_SNe_num(e_main);
-  }
-  for (int i = 0; i < SNe_list_count; i++) {
-    vector<SNe *> *SNe_list = new vector<SNe *>;
-    SNe_loop(SNe_list);
-    total_SNe_list.push_back(SNe_list);
-  }
-  double t_SNe_formation = omp_get_wtime();
-  cout << "Supernova initial data generation completed, cost " << t_SNe_formation - t_galaxy_formation << " s" << endl;
+  // cout << "Generate supernova initial data" << endl;
+  // vector<vector<SNe *> *> total_SNe_list;
+  // vector<int>             SNe_num(evo_time);
+  // for (int year = 1; year <= evo_time; year++) {
+  //   SNe_num[year - 1] = u_SNe_num(e_main);
+  // }
+  // for (int i = 0; i < SNe_list_count; i++) {
+  //   vector<SNe *> *SNe_list = new vector<SNe *>;
+  //   SNe_loop(SNe_list);
+  //   total_SNe_list.push_back(SNe_list);
+  // }
+  // double t_SNe_formation = omp_get_wtime();
+  // cout << "Supernova initial data generation completed, cost " << t_SNe_formation - t_galaxy_formation << " s" << endl;
 
 
-  cout << "Record supernova data" << endl;
-#pragma omp parallel for
-  for (int i = 0; i < int(Galaxy.size()); i++) {
-    for (int count = 0; count < SNe_list_count; count++) {
-      SNe_add(&Galaxy[i], total_SNe_list[count]);
-    }
-  }
-  double t_SNe_record = omp_get_wtime();
-  cout << "Supernova recording completed, cost " << t_SNe_record - t_SNe_formation << " s" << endl;
+  //   cout << "Record supernova data" << endl;
+  // #pragma omp parallel for
+  //   for (int i = 0; i < int(Galaxy.size()); i++) {
+  //     for (int count = 0; count < SNe_list_count; count++) {
+  //       SNe_add(&Galaxy[i], total_SNe_list[count]);
+  //     }
+  //   }
+  //   double t_SNe_record = omp_get_wtime();
+  //   cout << "Supernova recording completed, cost " << t_SNe_record - t_SNe_formation << " s" << endl;
 
 
   // 2   演化开始(每一步时长 1Myr)
@@ -89,10 +99,17 @@ int main() {
 
     // 2.4 超新星爆炸，重置灭绝半径内行星上的生命进程
     double t_SNe_start = omp_get_wtime();
+
+    SNe_loop(&SNe_list);
+    cout << "SNe loop" << endl;
+#pragma omp parallel for
+    for (int i = 0; i < int(Galaxy.size()); i++) {
+      SNe_add(&Galaxy[i], &SNe_list);
+    }
     cout << "SNe excuting" << endl;
 #pragma omp parallel for
     for (int i = 0; i < int(Galaxy.size()); i++) {
-      SNe_excute(&Galaxy[i], SNe_num[year - 1]);
+      SNe_excute(&Galaxy[i]);
     }
     double t_SNe_finish = omp_get_wtime();
     cout << "Excuted, cost" << t_SNe_finish - t_SNe_start << " s" << endl;

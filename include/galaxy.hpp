@@ -54,7 +54,8 @@ struct location {
   vector<nolife_planet *> *        Nolife_planets         = new vector<nolife_planet *>;
   vector<nointelligence_planet *> *Nointelligence_planets = new vector<nointelligence_planet *>;
   vector<intelligence_planet *> *  Intelligence_planets   = new vector<intelligence_planet *>;
-  vector<vector<SNe *> *> *        total_SNe_list         = new vector<vector<SNe *> *>;
+  vector<SNe *> *                  SNe_list               = new vector<SNe *>;
+  // vector<vector<SNe *> *> *        total_SNe_list         = new vector<vector<SNe *> *>;
 };
 
 struct location_list {

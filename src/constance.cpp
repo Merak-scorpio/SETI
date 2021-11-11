@@ -20,6 +20,7 @@ double P_ann;          //每步自毁概率
 int    evo_time;       //演化时长
 double P_Life;         //生命从无到有的泊松概率
 int    SNe_list_count; //超新星表容量大小
+int    star_end_year;  //产生新恒星停止时间
 
 string str_T_evo;
 string str_lambda_A;

@@ -12,4 +12,5 @@ void SNe_add(location *location, vector<SNe *> *SNe_list);
 
 bool excute_judge(double x1, double y1, double z1, double x2, double y2, double z2, double r);
 
-void SNe_excute(location *location, int SNe_num);
+// void SNe_excute(location *location, int SNe_num);
+void SNe_excute(location *location);
