@@ -141,7 +141,6 @@ void SNe_end(vector<SNe *> *SNe_list, vector<location> *Galaxy) {
     for (int i = 0; i < int(Galaxy->size()); i++) {
       for (int j = 0; j < int((*Galaxy)[i].SNe_list->size()); j++) {
         if ((*(*Galaxy)[i].SNe_list)[0] != NULL) {
-          // delete (*(*Galaxy)[i].SNe_list)[0];
           (*(*Galaxy)[i].SNe_list)[0] = NULL;
           (*Galaxy)[i].SNe_list->erase((*Galaxy)[i].SNe_list->begin());
         }
