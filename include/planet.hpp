@@ -6,7 +6,7 @@
 
 double IMF_rev(double phi);
 
-void planet_loop(location *location);
+void planet_loop(location *location, int year);
 
 void planet_nolife_process(location *location);
 

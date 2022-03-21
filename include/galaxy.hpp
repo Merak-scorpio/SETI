@@ -5,6 +5,7 @@
 #include <io.h>
 #elif linux
 #include <stdio.h>
+#include <stdlib.h>
 #include <unistd.h>
 #endif
 
@@ -46,15 +47,22 @@ struct SNe {
 };
 
 struct location {
-  int    x              = 500;
-  int    y              = 500;
-  double each_step_mass = 0;
-  double Mass_left      = 0;
+  int    x        = 500;
+  int    y        = 500;
+  double r        = 0;
+  double Normal_A = 0;
 
-  vector<nolife_planet *> *        Nolife_planets         = new vector<nolife_planet *>;
+  double fin_t         = 0;
+  double sigma_SFR     = 0;
+  double sigma_Gas     = 0;
+  double Gas_mass_left = 0;
+  double SFR_left      = 0;
+
+  vector<nolife_planet *>         *Nolife_planets         = new vector<nolife_planet *>;
   vector<nointelligence_planet *> *Nointelligence_planets = new vector<nointelligence_planet *>;
-  vector<intelligence_planet *> *  Intelligence_planets   = new vector<intelligence_planet *>;
-  vector<SNe *> *                  SNe_list               = new vector<SNe *>;
+  vector<intelligence_planet *>   *Intelligence_planets   = new vector<intelligence_planet *>;
+  vector<SNe *>                   *SNe_list               = new vector<SNe *>;
+  vector<SNe *>                   *excute_list            = new vector<SNe *>;
   // vector<vector<SNe *> *> *        total_SNe_list         = new vector<vector<SNe *> *>;
 };
 
