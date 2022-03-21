@@ -61,7 +61,6 @@ int main() {
     for (int i = 0; i < int(Galaxy.size()); i++) {
       SNe_add(&Galaxy[i], &SNe_list);
     }
-    cout << endl;
 #pragma omp parallel for
     for (int i = 0; i < int(Galaxy.size()); i++) {
       SNe_excute(&Galaxy[i]);
