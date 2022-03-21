@@ -9,7 +9,7 @@ uniform_real_distribution<double> u_10_100_(10, 100);
 normal_distribution<double>       n(M_SNII, 1.35);
 
 
-void SNe_loop_new(vector<SNe *> *SNe_list, vector<location> *Galaxy) {
+void SNe_loop(vector<SNe *> *SNe_list, vector<location> *Galaxy) {
   for (int i = 0; i < int(Galaxy->size()); i++) {
     for (int j = 0; j < int((*Galaxy)[i].SNe_list->size()); j++) {
       SNe_list->emplace_back((*(*Galaxy)[i].SNe_list)[j]);

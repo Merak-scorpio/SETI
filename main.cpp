@@ -56,7 +56,7 @@ int main() {
 
     // 2.4 超新星爆炸，重置灭绝半径内行星上的生命进程
     vector<SNe *> SNe_list;
-    SNe_loop_new(&SNe_list, &Galaxy);
+    SNe_loop(&SNe_list, &Galaxy);
 #pragma omp parallel for
     for (int i = 0; i < int(Galaxy.size()); i++) {
       SNe_add(&Galaxy[i], &SNe_list);
