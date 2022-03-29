@@ -39,6 +39,14 @@ struct intelligence_planet {
   double star_T_L;
 };
 
+struct large_mass_star {
+  int    star_age = 0;
+  double x_coordinate;
+  double y_coordinate;
+  double z_coordinate;
+  double star_T_L;
+};
+
 struct SNe {
   double x_coordinate;
   double y_coordinate;
@@ -61,9 +69,9 @@ struct location {
   vector<nolife_planet *>         *Nolife_planets         = new vector<nolife_planet *>;
   vector<nointelligence_planet *> *Nointelligence_planets = new vector<nointelligence_planet *>;
   vector<intelligence_planet *>   *Intelligence_planets   = new vector<intelligence_planet *>;
+  vector<large_mass_star *>       *Large_mass_stars       = new vector<large_mass_star *>;
   vector<SNe *>                   *SNe_list               = new vector<SNe *>;
   vector<SNe *>                   *excute_list            = new vector<SNe *>;
-  // vector<vector<SNe *> *> *        total_SNe_list         = new vector<vector<SNe *> *>;
 };
 
 struct location_list {

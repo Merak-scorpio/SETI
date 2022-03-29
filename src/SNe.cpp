@@ -11,8 +11,26 @@ normal_distribution<double>       n(M_SNII, 1.35);
 
 void SNe_loop(vector<SNe *> *SNe_list, vector<location> *Galaxy) {
   for (int i = 0; i < int(Galaxy->size()); i++) {
-    for (int j = 0; j < int((*Galaxy)[i].SNe_list->size()); j++) {
-      SNe_list->emplace_back((*(*Galaxy)[i].SNe_list)[j]);
+    vector<int> large_star_erase_list;
+    for (int j = 0; j < int((*Galaxy)[i].Large_mass_stars->size()); j++) {
+      (*(*Galaxy)[i].Large_mass_stars)[j]->star_age++;
+      if ((*(*Galaxy)[i].Large_mass_stars)[j]->star_age > (*(*Galaxy)[i].Large_mass_stars)[j]->star_T_L) {
+        SNe *temp_SNe          = new SNe;
+        temp_SNe->x_coordinate = (*(*Galaxy)[i].Large_mass_stars)[j]->x_coordinate;
+        temp_SNe->y_coordinate = (*(*Galaxy)[i].Large_mass_stars)[j]->y_coordinate;
+        temp_SNe->z_coordinate = (*(*Galaxy)[i].Large_mass_stars)[j]->z_coordinate;
+        temp_SNe->D_SNe        = d_SNII * exp(-0.4 * (n(e_SNe) - M_SNII));
+        SNe_list->emplace_back(temp_SNe);
+        large_star_erase_list.emplace_back(j);
+      }
+    }
+
+    for (int j = 0; j < int(large_star_erase_list.size()); j++) {
+      if ((*(*Galaxy)[i].Large_mass_stars)[large_star_erase_list[j] - j] != NULL) {
+        delete (*(*Galaxy)[i].Large_mass_stars)[large_star_erase_list[j] - j];
+        (*(*Galaxy)[i].Large_mass_stars)[large_star_erase_list[j] - j] = NULL;
+      }
+      (*Galaxy)[i].Large_mass_stars->erase((*Galaxy)[i].Large_mass_stars->begin() + large_star_erase_list[j] - j);
     }
   }
 }

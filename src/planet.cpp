@@ -26,8 +26,8 @@ double IMF_rev(double phi) {
 void planet_loop(location *location, int year) {
 
 
-  double planet_x_coordinate, planet_y_coordinate, planet_z_coordinate, sne_x_coordinate, sne_y_coordinate, sne_z_coordinate, star_T_L,
-      planet_T_min, temp_random, fin_t;
+  double planet_x_coordinate, planet_y_coordinate, planet_z_coordinate, large_mass_star_x_coordinate, large_mass_star_y_coordinate,
+      large_mass_star_z_coordinate, star_T_L, large_mass_star_star_T_L, planet_T_min, temp_random, fin_t;
 
   fin_t = location->Normal_A * exp(-year * h_R / (k * location->r));
   location->Gas_mass_left += fin_t * V_cell;
@@ -43,7 +43,7 @@ void planet_loop(location *location, int year) {
     location->sigma_SFR -= temp_star_mass;
     location->Gas_mass_left -= temp_star_mass;
     temp_random = u_0_1(e);
-    if (temp_star_mass > 0.8 && temp_star_mass < 1.2 && temp_random <= 0.00616) {
+    if (temp_random <= 0.00616 && temp_star_mass < 1.2 && temp_star_mass > 0.8) {
       planet_x_coordinate        = (location->x - 0.5 + u_0_1(e)) * cell_r;
       planet_y_coordinate        = (location->y - 0.5 + u_0_1(e)) * cell_r;
       planet_z_coordinate        = u_0_1(e) * thick;
@@ -57,15 +57,16 @@ void planet_loop(location *location, int year) {
       temp_planet->planet_T_min  = planet_T_min;
       location->Nolife_planets->emplace_back(temp_planet);
     } else if (temp_star_mass > 8) {
-      SNe *temp_sne          = new SNe;
-      sne_x_coordinate       = (location->x - 0.5 + u_0_1(e)) * cell_r;
-      sne_y_coordinate       = (location->y - 0.5 + u_0_1(e)) * cell_r;
-      sne_z_coordinate       = u_0_1(e) * thick;
-      temp_sne->x_coordinate = sne_x_coordinate;
-      temp_sne->y_coordinate = sne_y_coordinate;
-      temp_sne->z_coordinate = sne_z_coordinate;
-      temp_sne->D_SNe        = d_SNII * exp(-0.4 * (n_(e) - M_SNII));
-      location->SNe_list->emplace_back(temp_sne);
+      large_mass_star *temp_large_mass_star = new large_mass_star;
+      large_mass_star_x_coordinate          = (location->x - 0.5 + u_0_1(e)) * cell_r;
+      large_mass_star_y_coordinate          = (location->y - 0.5 + u_0_1(e)) * cell_r;
+      large_mass_star_z_coordinate          = u_0_1(e) * thick;
+      large_mass_star_star_T_L              = T_Lsun * pow(1 / temp_star_mass, 2.5);
+      temp_large_mass_star->x_coordinate    = large_mass_star_x_coordinate;
+      temp_large_mass_star->y_coordinate    = large_mass_star_y_coordinate;
+      temp_large_mass_star->z_coordinate    = large_mass_star_z_coordinate;
+      temp_large_mass_star->star_T_L        = large_mass_star_star_T_L;
+      location->Large_mass_stars->emplace_back(temp_large_mass_star);
     }
   }
 }
