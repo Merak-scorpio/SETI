@@ -19,7 +19,7 @@ void SNe_loop(vector<SNe *> *SNe_list, vector<location> *Galaxy) {
         temp_SNe->x_coordinate = (*(*Galaxy)[i].Large_mass_stars)[j]->x_coordinate;
         temp_SNe->y_coordinate = (*(*Galaxy)[i].Large_mass_stars)[j]->y_coordinate;
         temp_SNe->z_coordinate = (*(*Galaxy)[i].Large_mass_stars)[j]->z_coordinate;
-        temp_SNe->D_SNe        = d_SNII * exp(-0.4 * (n(e_SNe) - M_SNII));
+        temp_SNe->D_SNe        = d_SNII * pow(pow(10, -0.4 * (n(e_SNe) - M_SNII)), 0.5);
         SNe_list->emplace_back(temp_SNe);
         large_star_erase_list.emplace_back(j);
       }

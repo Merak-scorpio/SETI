@@ -54,6 +54,50 @@ int main() {
       planet_intelligence_process(&Galaxy[i]);
     }
 
+
+    str_year = to_string(year);
+    if (year % 100 == 0) {
+      ofstream planet_ofs;
+      planet_ofs.open("./result/temp/planet/year_" + str_year + "_planet.csv");
+      planet_ofs << "theta,d" << endl;
+      for (int i = 0; i < int(Galaxy.size()); i++) {
+        for (int j = 0; j < int(Galaxy[i].Nointelligence_planets->size()); j++) {
+          double x     = (*Galaxy[i].Nointelligence_planets)[j]->x_coordinate;
+          double y     = (*Galaxy[i].Nointelligence_planets)[j]->y_coordinate;
+          double d     = sqrt(x * x + y * y);
+          double theta = atan(x / y);
+          if (x < 0) {
+            theta = theta + M_PI;
+          }
+          theta = theta * 180 / M_PI;
+          planet_ofs << theta << "," << d << endl;
+        }
+        for (int j = 0; j < int(Galaxy[i].Nolife_planets->size()); j++) {
+          double x     = (*Galaxy[i].Nolife_planets)[j]->x_coordinate;
+          double y     = (*Galaxy[i].Nolife_planets)[j]->y_coordinate;
+          double d     = sqrt(x * x + y * y);
+          double theta = atan(x / y);
+          if (x < 0) {
+            theta = theta + M_PI;
+          }
+          theta = theta * 180 / M_PI;
+          planet_ofs << theta << "," << d << endl;
+        }
+        for (int j = 0; j < int(Galaxy[i].Intelligence_planets->size()); j++) {
+          double x     = (*Galaxy[i].Intelligence_planets)[j]->x_coordinate;
+          double y     = (*Galaxy[i].Intelligence_planets)[j]->y_coordinate;
+          double d     = sqrt(x * x + y * y);
+          double theta = atan(x / y);
+          if (x < 0) {
+            theta = theta + M_PI;
+          }
+          theta = theta * 180 / M_PI;
+          planet_ofs << theta << "," << d << endl;
+        }
+      }
+      planet_ofs.close();
+    }
+
     // 2.4 超新星爆炸，重置灭绝半径内行星上的生命进程
     vector<SNe *> SNe_list;
     SNe_loop(&SNe_list, &Galaxy);
@@ -61,17 +105,38 @@ int main() {
     for (int i = 0; i < int(Galaxy.size()); i++) {
       SNe_add(&Galaxy[i], &SNe_list);
     }
+
+    if (year % 100 == 0) {
+      ofstream SNe_ofs;
+      SNe_ofs.open("./result/temp/SNe/year_" + str_year + "_SNe.csv");
+      SNe_ofs << "theta,d" << endl;
+      for (int i = 0; i < int(SNe_list.size()); i++) {
+
+        double x     = SNe_list[i]->x_coordinate;
+        double y     = SNe_list[i]->y_coordinate;
+        double d     = sqrt(x * x + y * y);
+        double theta = atan(x / y);
+        if (x < 0) {
+          theta = theta + M_PI;
+        }
+        theta = theta * 180 / M_PI;
+        SNe_ofs << theta << "," << d << endl;
+      }
+      SNe_ofs.close();
+    }
+
 #pragma omp parallel for
     for (int i = 0; i < int(Galaxy.size()); i++) {
       SNe_excute(&Galaxy[i]);
     }
     SNe_end(&SNe_list, &Galaxy);
 
+
     // 2.5 记录演化结果
     if (year % 100 == 0) {
       vector<double> xaxis(bins);
       for (int i = 0; i < bins; i++) {
-        xaxis[i] = i * 22.5 / bins;
+        xaxis[i] = i * R / bins;
       }
       vector<double> xcount(bins);
       for (int i = 0; i < bins; i++) {
@@ -95,7 +160,10 @@ int main() {
             }
             theta = theta * 180 / M_PI;
             ofs << theta << "," << d << "," << (*Galaxy[i].Intelligence_planets)[j]->intelligence_age << endl;
-            local = int(d * bins / 22.5);
+            local = 0;
+            while ((local + 1) * R / bins < d) {
+              local++;
+            }
             xcount[local]++;
           }
         }

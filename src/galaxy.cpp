@@ -103,7 +103,7 @@ void galaxy_formation(vector<location> *Location_List) {
     for (int j = 0; j < size; j++) {
       r2 = (i - n) * (i - n) + (j - n) * (j - n);
       r  = sqrt(r2) * cell_r;
-      if (r < R && r > core_R) {
+      if (r < R && r > 0) {
         y = j - n;
 
         location temp_location;
@@ -111,7 +111,7 @@ void galaxy_formation(vector<location> *Location_List) {
         temp_location.y = y;
         temp_location.r = r;
         temp_location.Normal_A =
-            pow(10, 3) * (37 * exp((8 - r / h_R)) + 140 * exp(-r / h_R)) / ((k * r / h_R) * (1 - exp(-13500 * h_R / (k * r))));
+            (3.7 * pow(10, 7) * exp((8 - r) / h_R) + sigma_c * exp(-r / h_R)) / ((k * r / h_R) * (1 - exp(-13500 * h_R / (k * r))));
 
         Location_List->push_back(temp_location);
       }
