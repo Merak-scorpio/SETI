@@ -7,13 +7,18 @@ double thick     = 0.7;                  //银河系厚度
 double V_cell    = cell_r * cell_r;      //每个区域面积
 double A         = 2.5 * pow(10, -6.4);  //恒星生成参数
 double N         = 1.4;                  //恒星生成参数
-double sigma_c   = 140;                  //恒星分布参数
+double sigma_c   = 1.4 * pow(10, 8);     //银河系中心气体密度
 double h_R       = 2.25;                 //银河系标长
 int    T_Lsun    = 11000;                //太阳主序时间
 double d_SNII    = 0.008;                //超新星平均灭绝半径
 double M_SNII    = -16.89;               //超新星评价绝对星等
 int    SNe_total = int(0.025 * 1000000); //超新星总数
-double k         = 2500;                 //内落时标
+double k         = 2.5 * 1000;           //内落时标
+
+double star_mass_min;
+double star_mass_max;
+string str_star_mass_min;
+string str_star_mass_max;
 
 int    T_evo;          //生命进化所需时间
 double lambda_A;       //概率参数
@@ -23,7 +28,7 @@ double P_Life;         //生命从无到有的泊松概率
 int    SNe_list_count; //超新星表容量大小
 int    star_end_year;  //产生新恒星停止时间
 
-int bins = 50; //画图精细度
+int bins = 30; //画图精细度
 
 string str_T_evo;
 string str_lambda_A;
@@ -44,16 +49,20 @@ void constance_set() {
     fields.push_back(field);
   }
 
-  str_T_evo    = fields[0];
-  str_lambda_A = fields[1];
-  str_P_ann    = fields[2];
-  str_evo_time = fields[3];
+  str_T_evo         = fields[0];
+  str_lambda_A      = fields[1];
+  str_P_ann         = fields[2];
+  str_evo_time      = fields[3];
+  str_star_mass_min = fields[4];
+  str_star_mass_max = fields[5];
 
   T_evo    = stoi(str_T_evo);
   lambda_A = stod(str_lambda_A);
   P_ann    = stod(str_P_ann);
   evo_time = stoi(str_evo_time);
-
+  cout << evo_time << endl;
+  star_mass_min = stod(str_star_mass_min);
+  star_mass_max = stod(str_star_mass_max);
 
   P_Life       = 1 - exp(-lambda_A);
   str_T_evo    = to_string(T_evo);

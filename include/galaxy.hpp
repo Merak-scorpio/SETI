@@ -65,13 +65,14 @@ struct location {
   double sigma_Gas     = 0;
   double Gas_mass_left = 0;
   double SFR_left      = 0;
+  double SFR           = 0;
 
   vector<nolife_planet *>         *Nolife_planets         = new vector<nolife_planet *>;
   vector<nointelligence_planet *> *Nointelligence_planets = new vector<nointelligence_planet *>;
   vector<intelligence_planet *>   *Intelligence_planets   = new vector<intelligence_planet *>;
-  vector<large_mass_star *>       *Large_mass_stars       = new vector<large_mass_star *>;
-  vector<SNe *>                   *SNe_list               = new vector<SNe *>;
-  vector<SNe *>                   *excute_list            = new vector<SNe *>;
+  // vector<large_mass_star *>       *Large_mass_stars       = new vector<large_mass_star *>;
+  // vector<SNe *> *SNe_list    = new vector<SNe *>;
+  vector<SNe *> *excute_list = new vector<SNe *>;
 };
 
 struct location_list {

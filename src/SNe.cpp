@@ -2,14 +2,32 @@
 
 default_random_engine             e_SNe(time(0));
 uniform_real_distribution<double> u_(0, sigma_c);
-uniform_real_distribution<double> u_r(0, R);
+uniform_real_distribution<double> u_1(0, 1);
 uniform_real_distribution<double> u_theta(-M_PI, M_PI);
 uniform_real_distribution<double> u_z(0, thick);
 uniform_real_distribution<double> u_10_100_(10, 100);
 normal_distribution<double>       n(M_SNII, 1.35);
 
+double inv(double m) {
+  double r;
+  r = -h_R * log(1 - m * (1 - exp(-R / h_R)));
+  return r;
+}
 
-void SNe_loop(vector<SNe *> *SNe_list, vector<location> *Galaxy) {
+void SNe_loop(vector<SNe *> *SNe_list) {
+  double temp_theta, temp_r;
+  for (int i = 0; i < int(SNe_list->size()); i++) {
+    temp_theta                   = u_theta(e_SNe);
+    temp_r                       = inv(u_1(e_SNe));
+    (*SNe_list)[i]->x_coordinate = temp_r * cos(temp_theta);
+    (*SNe_list)[i]->y_coordinate = temp_r * sin(temp_theta);
+    (*SNe_list)[i]->z_coordinate = u_z(e_SNe);
+    (*SNe_list)[i]->D_SNe        = d_SNII * pow(pow(10, -0.4 * (n(e_SNe) - M_SNII)), 0.5);
+  }
+}
+
+/*
+void SNe_loop_(vector<SNe *> *SNe_list, vector<location> *Galaxy) {
   for (int i = 0; i < int(Galaxy->size()); i++) {
     vector<int> large_star_erase_list;
     for (int j = 0; j < int((*Galaxy)[i].Large_mass_stars->size()); j++) {
@@ -34,6 +52,7 @@ void SNe_loop(vector<SNe *> *SNe_list, vector<location> *Galaxy) {
     }
   }
 }
+*/
 
 bool SNe_add_judge(location *location, SNe *SNe) {
   double cir_x_coordinate = SNe->x_coordinate;
@@ -123,6 +142,7 @@ void SNe_excute(location *location) {
         temp_planet->y_coordinate  = (*location->Intelligence_planets)[i]->y_coordinate;
         temp_planet->z_coordinate  = (*location->Intelligence_planets)[i]->z_coordinate;
         location->Nolife_planets->emplace_back(temp_planet);
+        // cout << "intelligence killed" << endl;
         break;
       }
     }
@@ -154,6 +174,7 @@ void SNe_excute(location *location) {
   }
 }
 
+/*
 void SNe_end(vector<SNe *> *SNe_list, vector<location> *Galaxy) {
   if (int(SNe_list->size()) != 0) {
     for (int i = 0; i < int(Galaxy->size()); i++) {
@@ -166,3 +187,4 @@ void SNe_end(vector<SNe *> *SNe_list, vector<location> *Galaxy) {
     }
   }
 }
+*/

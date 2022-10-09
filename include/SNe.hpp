@@ -4,7 +4,10 @@
 #include "galaxy.hpp"
 #include "planet.hpp"
 
-void SNe_loop(vector<SNe *> *SNe_list, vector<location> *Galaxy);
+double inv(double m);
+
+void SNe_loop(vector<SNe *> *SNe_list);
+// void SNe_loop(vector<SNe *> *SNe_list, vector<location> *Galaxy);
 
 bool SNe_add_judge(location *location, SNe *SNe);
 

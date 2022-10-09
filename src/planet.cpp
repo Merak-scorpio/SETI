@@ -26,13 +26,17 @@ double IMF_rev(double phi) {
 void planet_loop(location *location, int year) {
 
 
-  double planet_x_coordinate, planet_y_coordinate, planet_z_coordinate, large_mass_star_x_coordinate, large_mass_star_y_coordinate,
-      large_mass_star_z_coordinate, star_T_L, large_mass_star_star_T_L, planet_T_min, temp_random, fin_t;
+  double planet_x_coordinate, planet_y_coordinate, planet_z_coordinate, planet_T_min, temp_random, star_T_L, fin_t;
+  // double large_mass_star_x_coordinate, large_mass_star_y_coordinate, large_mass_star_z_coordinate,  large_mass_star_star_T_L;
+
 
   fin_t = location->Normal_A * exp(-year * h_R / (k * location->r));
   location->Gas_mass_left += fin_t * V_cell;
   location->sigma_Gas = location->Gas_mass_left / V_cell;
   location->sigma_SFR = A * pow(location->sigma_Gas, 1.4) * V_cell + location->SFR_left;
+
+  // location->sigma_SFR = A * pow(sigma_c * exp(-location->r / h_R), N) * exp(-year / 6);
+
   while (true) {
     double temp_star_mass_phi = u_planet_phi(e);
     double temp_star_mass     = IMF_rev(temp_star_mass_phi);
@@ -43,7 +47,7 @@ void planet_loop(location *location, int year) {
     location->sigma_SFR -= temp_star_mass;
     location->Gas_mass_left -= temp_star_mass;
     temp_random = u_0_1(e);
-    if (temp_random <= 0.00616 && temp_star_mass < 1.2 && temp_star_mass > 0.8) {
+    if (temp_random <= 0.00616 && temp_star_mass < star_mass_max && temp_star_mass > star_mass_min) {
       planet_x_coordinate        = (location->x - 0.5 + u_0_1(e)) * cell_r;
       planet_y_coordinate        = (location->y - 0.5 + u_0_1(e)) * cell_r;
       planet_z_coordinate        = u_0_1(e) * thick;
@@ -56,7 +60,7 @@ void planet_loop(location *location, int year) {
       temp_planet->star_T_L      = star_T_L;
       temp_planet->planet_T_min  = planet_T_min;
       location->Nolife_planets->emplace_back(temp_planet);
-    } else if (temp_star_mass > 8) {
+    } /*else if (temp_star_mass > 8) {
       large_mass_star *temp_large_mass_star = new large_mass_star;
       large_mass_star_x_coordinate          = (location->x - 0.5 + u_0_1(e)) * cell_r;
       large_mass_star_y_coordinate          = (location->y - 0.5 + u_0_1(e)) * cell_r;
@@ -67,7 +71,7 @@ void planet_loop(location *location, int year) {
       temp_large_mass_star->z_coordinate    = large_mass_star_z_coordinate;
       temp_large_mass_star->star_T_L        = large_mass_star_star_T_L;
       location->Large_mass_stars->emplace_back(temp_large_mass_star);
-    }
+    }*/
   }
 }
 
@@ -128,6 +132,7 @@ void planet_nointelligence_process(location *location) {
       temp_planet->star_T_L            = (*location->Nointelligence_planets)[i]->star_T_L;
       erase_list.emplace_back(i);
       location->Intelligence_planets->emplace_back(temp_planet);
+      // cout << "count " << location->Intelligence_planets->size() << endl;
     }
   }
   for (int i = 0; i < int(erase_list.size()); i++) {

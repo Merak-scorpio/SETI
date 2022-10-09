@@ -58,22 +58,30 @@ void galaxy_formation(vector<location> *Location_List) {
     order     = str_order.data();
     system(order);
   }
-  str_dirname = "./result/T_evo__" + str_T_evo;
+  str_dirname = "./result/mass_" + str_star_mass_min + "--" + str_star_mass_max;
   dirname     = str_dirname.data();
   if (access(dirname, 0) != 0) {
     str_order = "mkdir " + str_dirname;
     order     = str_order.data();
     system(order);
   }
-  str_dirname = "./result/T_evo__" + str_T_evo + "/lambda_A__" + str_lambda_A;
+  str_dirname = "./result/mass_" + str_star_mass_min + "--" + str_star_mass_max + "/T_evo__" + str_T_evo;
   dirname     = str_dirname.data();
   if (access(dirname, 0) != 0) {
     str_order = "mkdir " + str_dirname;
     order     = str_order.data();
     system(order);
   }
-  str_dirname = "./result/T_evo__" + str_T_evo + "/lambda_A__" + str_lambda_A + "/P_ann__" + str_P_ann;
+  str_dirname = "./result/mass_" + str_star_mass_min + "--" + str_star_mass_max + "/T_evo__" + str_T_evo + "/lambda_A__" + str_lambda_A;
   dirname     = str_dirname.data();
+  if (access(dirname, 0) != 0) {
+    str_order = "mkdir " + str_dirname;
+    order     = str_order.data();
+    system(order);
+  }
+  str_dirname = "./result/mass_" + str_star_mass_min + "--" + str_star_mass_max + "/T_evo__" + str_T_evo + "/lambda_A__" + str_lambda_A +
+                "/P_ann__" + str_P_ann;
+  dirname = str_dirname.data();
   if (access(dirname, 0) != 0) {
     str_order = "mkdir " + str_dirname;
     order     = str_order.data();
@@ -82,12 +90,13 @@ void galaxy_formation(vector<location> *Location_List) {
   str_order = "rm -rf " + str_dirname;
   order     = str_order.data();
   system(order);
-  str_order = "mkdir ./result/T_evo__" + str_T_evo + "/lambda_A__" + str_lambda_A + "/P_ann__" + str_P_ann;
-  order     = str_order.data();
+  str_order = "mkdir ./result/mass_" + str_star_mass_min + "--" + str_star_mass_max + "/T_evo__" + str_T_evo + "/lambda_A__" +
+              str_lambda_A + "/P_ann__" + str_P_ann;
+  order = str_order.data();
   system(order);
 
-  ofs.open("./result/T_evo__" + str_T_evo + "/lambda_A__" + str_lambda_A + "/P_ann__" + str_P_ann + "/_result_T_evo__" + str_T_evo +
-           +"_lambda_A__" + str_lambda_A + "_P_ann__" + str_P_ann + ".csv");
+  ofs.open("./result/mass_" + str_star_mass_min + "--" + str_star_mass_max + "/T_evo__" + str_T_evo + "/lambda_A__" + str_lambda_A +
+           "/P_ann__" + str_P_ann + "/_result_T_evo__" + str_T_evo + +"_lambda_A__" + str_lambda_A + "_P_ann__" + str_P_ann + ".csv");
   ofs << "distance,year,count" << endl;
   ofs.close();
 #endif
@@ -107,9 +116,10 @@ void galaxy_formation(vector<location> *Location_List) {
         y = j - n;
 
         location temp_location;
-        temp_location.x = x;
-        temp_location.y = y;
-        temp_location.r = r;
+        temp_location.x   = x;
+        temp_location.y   = y;
+        temp_location.r   = r;
+        temp_location.SFR = 0;
         temp_location.Normal_A =
             (3.7 * pow(10, 7) * exp((8 - r) / h_R) + sigma_c * exp(-r / h_R)) / ((k * r / h_R) * (1 - exp(-13500 * h_R / (k * r))));
 
